@@ -143,12 +143,12 @@ namespace M4L3CopyGroupPlagin
             return false;
         }
     }
-    public class RoomPickFilterByTag : ISelectionFilter
+    public class RoomPickFilter : ISelectionFilter
     {
         public bool AllowElement(Element elem)
         {
             //необходимо возвращать true или false в зависимости от типа элемента
-            if (elem.Category.Id.IntegerValue == (int)BuiltInCategory.OST_RoomTags)
+            if (elem.Category.Id.IntegerValue == (int)BuiltInCategory.OST_Rooms)
                 return true;
             else
                 return false;
