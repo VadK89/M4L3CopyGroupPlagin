@@ -45,12 +45,9 @@ namespace M4L3CopyGroupPlagin
                 XYZ offset = groupCenter - roomcenter;
 
                 //выбор комнаты для вставки
-                GroupPickFilter roomPickFilter = new GroupPickFilter();
+                RoomPickFilter roomPickFilter = new RoomPickFilter();
                 
                 Reference roomP = uiDoc.Selection.PickObject(ObjectType.Element, roomPickFilter, "Выберете комнату для копирования");//получение списка комнат
-
-
-
 
                 //Room roompaste = GetRoomByPoint(doc, groupCenter);
 
@@ -59,7 +56,6 @@ namespace M4L3CopyGroupPlagin
                 //XYZ point = groupCenter - roompastecenter;
                 XYZ point = uiDoc.Selection.PickPoint("Выберете точку");
                 
-
                 //вставка группы в точку
 
                 Transaction transaction = new Transaction(doc);
@@ -123,8 +119,6 @@ namespace M4L3CopyGroupPlagin
 
         
     }
-
-
 
     //класс для фильтра выбора групп
     public class GroupPickFilter : ISelectionFilter
